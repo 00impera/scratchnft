@@ -6,7 +6,7 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Cont
 
 BOT_TOKEN    = os.environ["BOT_TOKEN"]
 CONTRACT     = "0x71a8F50008b08cc736E739239faF549a34fD9C8f"
-DAPP_URL     = "https://scratchnft.imperamonad.xyz"
+DAPP_URL     = "https://fragrant-bush-115e.nelutz2you.workers.dev"
 RPC_URL      = "https://rpc.monad.xyz"
 CHAIN_ID     = 143
 EXPLORER     = "https://monad.socialscan.io"
@@ -54,7 +54,7 @@ WELCOME = """
 ✦ *SCRATCHCARD NFT* ✦
 ━━━━━━━━━━━━━━━━━━━━
 🎰 First on-chain scratch card on *Monad*!
-🌐 scratchnft.imperamonad.xyz
+🌐 fragrant-bush-115e.nelutz2you.workers.dev
 
 1️⃣ Mint a scratch card NFT
 2️⃣ Scratch it on-chain
@@ -64,7 +64,8 @@ WELCOME = """
 
 🥉 Small Win → 2x · 🥈 Big Win → 5x · 🥇 Jackpot → 20x
 ━━━━━━━━━━━━━━━━━━━━
-Ready to scratch? 👇
+⚠️ Open in MetaMask or Trust Wallet browser!
+Ready to scratch? 👇 to ScratchCard NFT — Monad
 """
 
 async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
@@ -72,7 +73,7 @@ async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
 
 async def help_cmd(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "❓ *HELP*\n\n🌐 scratchnft.imperamonad.xyz\n\nMonad Mainnet Chain ID: 143\n\n/start /stats /price /contract /help",
+        "❓ *HELP*\n\n🌐 fragrant-bush-115e.nelutz2you.workers.dev\n\nMonad Mainnet Chain ID: 143\n\n/start /stats /price /contract /help",
         parse_mode="Markdown", reply_markup=main_keyboard()
     )
 
@@ -112,7 +113,7 @@ async def button(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         )
     elif q.data == "help":
         await q.edit_message_text(
-            "❓ *HELP*\n\n🌐 scratchnft.imperamonad.xyz\nMonad Mainnet Chain ID: 143\n\n/start /stats /price /contract /help",
+            "❓ *HELP*\n\n🌐 fragrant-bush-115e.nelutz2you.workers.dev\nMonad Mainnet Chain ID: 143\n\n/start /stats /price /contract /help",
             parse_mode="Markdown", reply_markup=main_keyboard()
         )
 
@@ -121,7 +122,7 @@ def main():
     app.add_handler(CommandHandler("start",    start))
     app.add_handler(CommandHandler("help",     help_cmd))
     app.add_handler(CallbackQueryHandler(button))
-    log.info("ScratchCard Bot started - scratchnft.imperamonad.xyz")
+    log.info("ScratchCard Bot started - fragrant-bush-115e.nelutz2you.workers.dev")
     app.run_polling(allowed_updates=Update.ALL_TYPES)
 
 if __name__ == "__main__":
