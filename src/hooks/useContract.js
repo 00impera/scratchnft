@@ -1,0 +1,56 @@
+export const CONTRACT_ADDR = "0x71a8F50008b08cc736E739239faF549a34fD9C8f";
+export const CHAIN_ID      = 143;
+export const RPC_URL       = "https://rpc.monad.xyz";
+
+export const ABI = [
+  "function cardPrice() view returns (uint256)",
+  "function prizePool() view returns (uint256)",
+  "function totalSupply() view returns (uint256)",
+  "function nextTokenId() view returns (uint256)",
+  "function mintOpen() view returns (bool)",
+  "function soulbound() view returns (bool)",
+  "function name() view returns (string)",
+  "function symbol() view returns (string)",
+  "function MONAD_RACER() view returns (uint8)",
+  "function ETH_WARRIOR() view returns (uint8)",
+  "function USDC_RIDER() view returns (uint8)",
+  "function TIER_JACKPOT() view returns (uint8)",
+  "function TIER_BIG() view returns (uint8)",
+  "function TIER_SMALL() view returns (uint8)",
+  "function TIER_LOSE() view returns (uint8)",
+  "function balanceOf(address owner) view returns (uint256)",
+  "function ownerOf(uint256 tokenId) view returns (address)",
+  "function tokenURI(uint256 tokenId) view returns (string)",
+  "function getApproved(uint256 tokenId) view returns (address)",
+  "function isApprovedForAll(address owner, address operator) view returns (bool)",
+  "function approve(address to, uint256 tokenId)",
+  "function setApprovalForAll(address operator, bool approved)",
+  "function transferFrom(address from, address to, uint256 tokenId)",
+  "function safeTransferFrom(address from, address to, uint256 tokenId)",
+  "function cardData(uint256) view returns (uint8 charType, uint8 tier, uint256 prize, uint8 state, uint40 mintedAt, uint40 scratchedAt, bytes32 seed)",
+  "function getCard(uint256 tokenId) view returns (tuple(uint8 charType, uint8 tier, uint256 prize, uint8 state, uint40 mintedAt, uint40 scratchedAt, bytes32 seed))",
+  "function getCIDs(uint8 charType) view returns (string, string, string, string, string)",
+  "function unscratchedCID(uint8) view returns (string)",
+  "function revealedCID(uint8, uint8) view returns (string)",
+  "function mint() payable returns (uint256 tokenId)",
+  "function mintSpecific(uint8 charType) payable returns (uint256 tokenId)",
+  "function scratch(uint256 tokenId)",
+  "function claim(uint256 tokenId)",
+  "function fundPrizePool() payable",
+  "function setCardPrice(uint256 p)",
+  "function setMintOpen(bool o)",
+  "function setSoulbound(bool s)",
+  "function setCIDs(uint8 charType, string unscratched, string lose, string small, string big, string jackpot)",
+  "function withdrawHouseEdge(uint256 amount)",
+  "function owner() view returns (address)",
+  "function transferOwnership(address newOwner)",
+  "function renounceOwnership()",
+  "event CardMinted(uint256 indexed tokenId, address indexed to, uint8 charType)",
+  "event CardScratched(uint256 indexed tokenId, uint8 tier, uint256 prize)",
+  "event PrizeClaimed(uint256 indexed tokenId, address indexed player, uint256 amount)",
+  "event Transfer(address indexed from, address indexed to, uint256 indexed tokenId)",
+];
+
+export const CARD_STATE = { 0:"UNSCRATCHED", 1:"SCRATCHED", 2:"CLAIMED" };
+export const TIER_LABELS = { 0:"🏆 Jackpot", 1:"💎 Big Win", 2:"⭐ Small Win", 3:"😶 No Prize" };
+export const CHAR_LABELS = { 0:"🟣 Monad Racer", 1:"💠 ETH Warrior", 2:"💵 USDC Rider" };
